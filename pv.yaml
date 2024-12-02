@@ -1,15 +1,16 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: gce-pd-pv
+  name: sqlite-pv
+  namespace: revhire
 spec:
   capacity:
-    storage: 10Gi
+    storage: 1Gi  # Adjust the size as needed
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: gce-standard
+  storageClassName: gce-standard  # Adjust this if you are using a different storage class
   csi:
     driver: pd.csi.storage.gke.io
     volumeHandle: 5244314273087284239
