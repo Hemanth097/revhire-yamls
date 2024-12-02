@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: revhire-service
+spec:
+  selector:
+    app: revhire
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+      nodePort: 32423
+  type: NodePort
