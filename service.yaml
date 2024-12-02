@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: revhire-service
+  namespace: revhire
 spec:
   selector:
     app: revhire
