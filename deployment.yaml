@@ -4,7 +4,7 @@ metadata:
   name: revhire-deployment
   namespace: revhire
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: revhire
@@ -18,10 +18,10 @@ spec:
           image: hemanth097/revhire:latest
           ports:
             - containerPort: 8000
-      #     volumeMounts:
-      #       - name: sqlite-storage
-      #         mountPath: ./ 
-      # volumes:
-      #   - name: sqlite-storage
-      #     persistentVolumeClaim:
-      #       claimName: sqlite-pvc
+          volumeMounts:
+            - name: sqlite-storage
+              mountPath: ./ 
+      volumes:
+        - name: sqlite-storage
+          persistentVolumeClaim:
+            claimName: sqlite-pvc
