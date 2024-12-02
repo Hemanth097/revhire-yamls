@@ -11,7 +11,7 @@ spec:
     storage: 1Gi
   csi:
     driver: pd.csi.storage.gke.io
-    volumeHandle: projects/outpost-443210/zones/us-central1-a/disks/csi-disk 
+    volumeHandle: projects/outpost-443210/zones/us-west1-a/disks/csi-driver
   persistentVolumeReclaimPolicy: Retain
   storageClassName: gce-standard
   volumeMode: Filesystem
